@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':domain')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     // AndroidX
@@ -43,7 +43,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
+    implementation 'javax.inject:javax.inject:1'
     // Junit
-    testImplementation "junit:junit:4.12"
-    testImplementation "org.mockito:mockito-core:2.24.0"
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.24.0'
 }
