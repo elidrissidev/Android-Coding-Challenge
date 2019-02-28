@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Coding Challenge</string>
+    <string name="api_base_url" translatable="false">https://api.github.com/</string>
 </resources>
