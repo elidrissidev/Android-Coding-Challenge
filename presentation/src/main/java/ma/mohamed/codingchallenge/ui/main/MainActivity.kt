@@ -1,7 +1,8 @@
-package ma.mohamed.codingchallenge
+package ma.mohamed.codingchallenge.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ma.mohamed.codingchallenge.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import ma.mohamed.codingchallenge.R
+import ma.mohamed.codingchallenge.data.api.GitHubService
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -44,4 +45,8 @@ class NetworkModule {
         .client(client)
         .baseUrl(context.getString(R.string.api_base_url))
         .build()
+
+    @Singleton
+    @Provides
+    fun provideGitHubService(retrofit: Retrofit): GitHubService = retrofit.create(GitHubService::class.java)
 }
