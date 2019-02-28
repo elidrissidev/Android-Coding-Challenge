@@ -5,5 +5,5 @@ import ma.mohamed.codingchallenge.domain.entity.PagedResponseEntity
 import ma.mohamed.codingchallenge.domain.entity.RepoEntity
 
 interface RepoRepository {
-    fun getRepos(): Single<List<PagedResponseEntity<RepoEntity>>>
+    fun getRepos(fromDate: String): Single<PagedResponseEntity<RepoEntity>>
 }
