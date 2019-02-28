@@ -1,0 +1,9 @@
+package ma.mohamed.codingchallenge.data.model
+
+import com.google.gson.annotations.SerializedName
+
+data class UserModel(
+    @SerializedName("login") val login: String,
+    @SerializedName("html_url") val url: String,
+    @SerializedName("avatar_url") val avatar: String
+)
