@@ -8,6 +8,8 @@ data class LoadingState(val state: State, val msg: String? = null) {
         LOADING,
         /** Represents an error that happened when loading a page of data **/
         LOADING_ERROR,
+        /** Represents an error that happened when loading the initial data **/
+        INITIAL_LOADING_ERROR,
         /** Represents a successful loading of data **/
         SUCCESS
     }
@@ -17,5 +19,6 @@ data class LoadingState(val state: State, val msg: String? = null) {
         val LOADING = LoadingState(State.LOADING)
         val SUCCESS = LoadingState(State.SUCCESS)
         fun error(msg: String?): LoadingState = LoadingState(State.LOADING_ERROR, msg)
+        fun initialLoadingError(msg: String?): LoadingState = LoadingState(State.INITIAL_LOADING_ERROR, msg)
     }
 }

@@ -38,7 +38,7 @@ class ReposDataSource(
                     },
                     onError = {
                         Timber.e(it)
-                        _loadingState.value = LoadingState.error(
+                        _loadingState.value = LoadingState.initialLoadingError(
                             if (it is UnknownHostException) "No network connection" else it.message
                         )
                         retryCallback = { loadInitial(params, callback) }
