@@ -17,7 +17,7 @@ class RepoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val repoDesc: TextView by itemView.bindView(R.id.repo_description)
     private val ownerName: TextView by itemView.bindView(R.id.owner_name)
     private val ownerAvatar: CircleImageView by itemView.bindView(R.id.owner_avatar)
-    private val starsgazers: TextView by itemView.bindView(R.id.stars_count)
+    private val stargazers: TextView by itemView.bindView(R.id.stars_count)
 
     fun bind(repo: RepoEntity?, onClick: (RepoEntity) -> Unit) {
         repo?.apply {
@@ -26,7 +26,7 @@ class RepoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             repoDesc.text = description
             ownerName.text = owner.login
             ownerAvatar.contentDescription = itemView.context.getString(R.string.owner_avatar_content_desc, owner.login)
-            starsgazers.text = starsCount.toString()
+            stargazers.text = starsCount.toString()
             Glide.with(itemView)
                 .load(owner.avatar)
                 .into(ownerAvatar)
