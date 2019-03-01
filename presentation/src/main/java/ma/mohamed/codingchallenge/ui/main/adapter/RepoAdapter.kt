@@ -60,7 +60,10 @@ class RepoAdapter(
         }
     }
 
-    private fun hasLoadingFooter(): Boolean = loadingState != null && loadingState != LoadingState.SUCCESS
+    private fun hasLoadingFooter(): Boolean {
+        return loadingState != null && loadingState != LoadingState.SUCCESS
+                && loadingState != LoadingState.INITIAL_LOADING
+    }
 
     companion object {
         val DIFF_COMPARATOR = object : DiffUtil.ItemCallback<RepoEntity>() {
