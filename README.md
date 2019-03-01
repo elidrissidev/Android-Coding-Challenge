@@ -1,6 +1,7 @@
 # Android Coding Challenge
 
-This is my take on this [coding challenge](https://github.com/hiddenfounders/mobile-coding-challenge).
+This is my take on this [coding challenge](https://github.com/hiddenfounders/mobile-coding-challenge). 
+Click [here](https://github.com/MohamedElidrissi/Android-Coding-Challenge/releases) to download a preview APK.
 
 <img alt="Screenshot" height="600" src="https://raw.githubusercontent.com/MohamedElidrissi/Android-Coding-Challenge/master/screenshot.png">
 
