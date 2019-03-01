@@ -59,6 +59,7 @@ class MainFragment : DaggerFragment() {
         })
         viewModel.loadingState.observe(this, Observer {
             Timber.i(it.state.name)
+            repoAdapter.setLoadingState(it)
             swipeRefresh.isRefreshing = it == LoadingState.INITIAL_LOADING
         })
     }
