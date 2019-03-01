@@ -7,7 +7,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RepoMapper @Inject constructor(private val userMapper: UserMapper) : Mapper<RepoEntity, RepoModel> {
+open class RepoMapper @Inject constructor(private val userMapper: UserMapper) : Mapper<RepoEntity, RepoModel> {
 
     override fun toEntity(model: RepoModel): RepoEntity = RepoEntity(
         model.id,

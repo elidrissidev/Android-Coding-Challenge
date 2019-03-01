@@ -1,6 +1,7 @@
 package ma.mohamed.codingchallenge.domain
 
 import io.reactivex.Single
+import ma.mohamed.codingchallenge.domain.common.DomainTestUtils
 import ma.mohamed.codingchallenge.domain.common.SyncSingleTransformer
 import ma.mohamed.codingchallenge.domain.repository.RepoRepository
 import ma.mohamed.codingchallenge.domain.usecase.GetReposUseCase
@@ -23,7 +24,7 @@ class UseCasesTest {
     @Test
     fun testGetReposUseCaseShouldReturnRepos() {
         val usecase = GetReposUseCase(repoRepository, SyncSingleTransformer())
-        val repos = TestUtils.REPOS_RESPONSE
+        val repos = DomainTestUtils.REPOS_RESPONSE_ENTITY
 
         `when`(repoRepository.getRepos(anyString(), anyInt())).thenReturn(Single.just(repos))
 
