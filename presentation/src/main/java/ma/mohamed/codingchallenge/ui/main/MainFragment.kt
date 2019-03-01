@@ -45,7 +45,7 @@ class MainFragment : DaggerFragment() {
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
-            adapter = adapter
+            adapter = repoAdapter
         }
 
         swipeRefresh.setOnRefreshListener(viewModel::refresh)
