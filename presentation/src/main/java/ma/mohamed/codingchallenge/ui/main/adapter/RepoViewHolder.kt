@@ -23,7 +23,7 @@ class RepoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         repo?.apply {
             itemView.setOnClickListener { onClick(repo) }
             repoName.text = name
-            repoDesc.text = description
+            repoDesc.text = description ?: itemView.context.getString(R.string.no_description)
             ownerName.text = owner.login
             ownerAvatar.contentDescription = itemView.context.getString(R.string.owner_avatar_content_desc, owner.login)
             stargazers.text = starsCount.toString()

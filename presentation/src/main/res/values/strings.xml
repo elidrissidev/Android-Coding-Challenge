@@ -2,6 +2,7 @@
     <string name="app_name">Coding Challenge</string>
     <string name="api_base_url" translatable="false">https://api.github.com/</string>
     <string name="retry">Retry</string>
+    <string name="no_description">No description</string>
     <string name="unknown_error">An error occurred. Please try again</string>
     <string name="owner_avatar_content_desc">%s\'s Avatar</string>
 </resources>
