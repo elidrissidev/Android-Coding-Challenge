@@ -1,5 +1,7 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar" />
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="appbarOverlay">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item> <!-- custom attr -->
+    </style>
 
 </resources>
