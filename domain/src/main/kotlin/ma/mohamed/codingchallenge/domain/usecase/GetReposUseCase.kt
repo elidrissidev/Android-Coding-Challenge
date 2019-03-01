@@ -13,6 +13,9 @@ class GetReposUseCase(
 ) : SingleUseCase<String, Single<PagedResponseEntity<RepoEntity>>>() {
 
     override fun execute(vararg params: String): Single<PagedResponseEntity<RepoEntity>> {
-        return reposRepository.getRepos(params[0]).compose(transformer)
+        return reposRepository.getRepos(
+            params[0], // start date
+            params[1].toIntOrNull() ?: 1 // page
+        ).compose(transformer)
     }
 }

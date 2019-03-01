@@ -12,8 +12,8 @@ class RepoRepositoryImpl(
     private val repoMapper: RepoMapper
 ) : RepoRepository {
 
-    override fun getRepos(fromDate: String): Single<PagedResponseEntity<RepoEntity>> {
-        return gitHubService.getRepos(fromDate).map {
+    override fun getRepos(fromDate: String, page: Int): Single<PagedResponseEntity<RepoEntity>> {
+        return gitHubService.getRepos(fromDate, page).map {
             PagedResponseEntity(it.items.map(repoMapper::toEntity))
         }
     }

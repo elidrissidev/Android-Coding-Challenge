@@ -16,6 +16,6 @@ data class LoadingState(val state: State, val msg: String? = null) {
         val INITIAL_LOADING = LoadingState(State.INITIAL_LOADING)
         val LOADING = LoadingState(State.LOADING)
         val SUCCESS = LoadingState(State.SUCCESS)
-        fun error(msg: String): LoadingState = LoadingState(State.LOADING_ERROR, msg)
+        fun error(msg: String?): LoadingState = LoadingState(State.LOADING_ERROR, msg)
     }
 }

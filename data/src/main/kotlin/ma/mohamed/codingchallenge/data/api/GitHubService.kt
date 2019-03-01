@@ -14,6 +14,7 @@ interface GitHubService {
     @GET("search/repositories?q=created:>{fromDate}")
     fun getRepos(
         @Path("fromDate") fromDate: String,
+        @Query("page") page: Int,
         @Query("sort") sortBy: String = "stars",
         @Query("order") order: String = "desc"
     ): Single<PagedResponseModel<RepoModel>>
