@@ -2,6 +2,8 @@
 
 This is my take on this [coding challenge](https://github.com/hiddenfounders/mobile-coding-challenge).
 
+<img alt="Screenshot" height="600" src="https://raw.githubusercontent.com/MohamedElidrissi/Android-Coding-Challenge/master/screenshot.png">
+
 ## Run
 To run this project you will need Android Studio 3.3.1 or higher
 
@@ -24,6 +26,7 @@ This project uses a clean architecture approach, and is composed of 3 modules, e
 * Glide: for loading images.
 * Timber: for logging
 * LeakCanary: for leaks detection
+* Mockito and JUnit: for unit testing.
 
 ## Testing:
 This project contains unit tests for ```:data``` and ```:domain``` modules.
