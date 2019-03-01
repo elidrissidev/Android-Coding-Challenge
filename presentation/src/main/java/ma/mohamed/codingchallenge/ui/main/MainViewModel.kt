@@ -25,7 +25,9 @@ class MainViewModel @Inject constructor(
     }
 
     init {
-        val config = PagedList.Config.Builder().build()
+        val config = PagedList.Config.Builder()
+            .setPageSize(30)
+            .build()
 
         repos = LivePagedListBuilder<Int, RepoEntity>(dataSourceFactory, config).build()
     }

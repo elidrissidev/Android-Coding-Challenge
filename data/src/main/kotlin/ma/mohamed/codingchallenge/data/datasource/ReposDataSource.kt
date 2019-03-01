@@ -16,13 +16,16 @@ class ReposDataSource(
 
     private var retryCallback: (() -> Unit)? = null
 
+    private var currentPage: Int = 1
+
     private val _loadingState = mutableLiveDataOf(LoadingState.INITIAL_LOADING)
     val loadingState: LiveData<LoadingState>
         get() = _loadingState
 
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, RepoEntity>) {
+        currentPage = 1
         getReposUseCase.apply {
-            execute(startDate, "1")
+            execute(startDate, currentPage.toString())
                 .doOnSubscribe { disposable ->
                     add(disposable)
                     _loadingState.postValue(LoadingState.INITIAL_LOADING)
@@ -30,6 +33,7 @@ class ReposDataSource(
                     onSuccess = {
                         _loadingState.value = LoadingState.SUCCESS
                         callback.onResult(it.items, 1, 2)
+                        currentPage++
                     },
                     onError = {
                         Timber.e(it)
@@ -48,6 +52,7 @@ class ReposDataSource(
                     _loadingState.postValue(LoadingState.LOADING)
                 }.subscribeBy(
                     onSuccess = {
+                        currentPage++
                         _loadingState.value = LoadingState.SUCCESS
                         callback.onResult(it.items, params.key + 1)
                     },
