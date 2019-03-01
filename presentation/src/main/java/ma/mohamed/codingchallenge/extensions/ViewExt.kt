@@ -11,3 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 internal fun <T : View> View.bindView(@IdRes id: Int): Lazy<T> {
     return lazyUnSync { this.findViewById<T>(id) }
 }
+
+internal fun View.show() {
+    this.visibility = View.VISIBLE
+}
+
+internal fun View.hide() {
+    this.visibility = View.GONE
+}
