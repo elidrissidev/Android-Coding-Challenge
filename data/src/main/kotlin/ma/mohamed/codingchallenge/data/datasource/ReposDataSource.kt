@@ -8,6 +8,7 @@ import ma.mohamed.codingchallenge.data.model.LoadingState
 import ma.mohamed.codingchallenge.domain.entity.RepoEntity
 import ma.mohamed.codingchallenge.domain.usecase.GetReposUseCase
 import timber.log.Timber
+import java.net.UnknownHostException
 
 class ReposDataSource(
     private val getReposUseCase: GetReposUseCase,
@@ -37,7 +38,9 @@ class ReposDataSource(
                     },
                     onError = {
                         Timber.e(it)
-                        _loadingState.value = LoadingState.error(it.message)
+                        _loadingState.value = LoadingState.error(
+                            if (it is UnknownHostException) "No network connection" else it.message
+                        )
                         retryCallback = { loadInitial(params, callback) }
                     }
                 )
@@ -58,7 +61,9 @@ class ReposDataSource(
                     },
                     onError = {
                         Timber.e(it)
-                        _loadingState.value = LoadingState.error(it.message)
+                        _loadingState.value = LoadingState.error(
+                            if (it is UnknownHostException) "No network connection" else it.message
+                        )
                         retryCallback = { loadAfter(params, callback) }
                     }
                 )
