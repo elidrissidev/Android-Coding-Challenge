@@ -11,9 +11,9 @@ import retrofit2.http.Query
 interface GitHubService {
 
     @Headers("Accept: application/json")
-    @GET("search/repositories?q=created:>{fromDate}")
+    @GET("search/repositories")
     fun getRepos(
-        @Path("fromDate") fromDate: String,
+        @Query("q") query: String,
         @Query("page") page: Int,
         @Query("sort") sortBy: String = "stars",
         @Query("order") order: String = "desc"
