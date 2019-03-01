@@ -19,4 +19,15 @@ object DataTestUtils {
             )
         }
     )
+
+    val USER_MODEL = UserModel("user", "url", "avatar")
+
+    val REPO_MODEL = RepoModel(
+        1,
+        "repository",
+        "description of repo",
+        "url",
+        USER_MODEL,
+        100
+    )
 }

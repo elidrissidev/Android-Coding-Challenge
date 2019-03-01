@@ -19,4 +19,15 @@ object DomainTestUtils {
             )
         }
     )
+
+    val USER_ENTITY = UserEntity("user", "url", "avatar")
+
+    val REPO_ENTITY = RepoEntity(
+        1,
+        "repository",
+        "description of repo",
+        "url",
+        USER_ENTITY,
+        100
+    )
 }
