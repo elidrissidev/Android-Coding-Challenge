@@ -22,10 +22,11 @@ class ReposDataSource(
 
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, RepoEntity>) {
         getReposUseCase.apply {
-            add(this)
             execute(startDate, "1")
-                .doOnSubscribe { _loadingState.postValue(LoadingState.INITIAL_LOADING) }
-                .subscribeBy(
+                .doOnSubscribe { disposable ->
+                    add(disposable)
+                    _loadingState.postValue(LoadingState.INITIAL_LOADING)
+                }.subscribeBy(
                     onSuccess = {
                         _loadingState.value = LoadingState.SUCCESS
                         callback.onResult(it.items, 1, 2)
@@ -41,10 +42,11 @@ class ReposDataSource(
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, RepoEntity>) {
         getReposUseCase.apply {
-            add(this)
             execute(startDate, params.key.toString())
-                .doOnSubscribe { _loadingState.postValue(LoadingState.LOADING) }
-                .subscribeBy(
+                .doOnSubscribe { disposable ->
+                    add(disposable)
+                    _loadingState.postValue(LoadingState.LOADING)
+                }.subscribeBy(
                     onSuccess = {
                         _loadingState.value = LoadingState.SUCCESS
                         callback.onResult(it.items, params.key + 1)
