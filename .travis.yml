@@ -12,7 +12,7 @@ sudo: required
 
 before_install:
   # Skip build if the commit message contains [skip travis] or [travis skip]
-  - yes | sdkmanager "build-tools;28.0.3;Android SDK Build-Tools 28.0.3;platforms;android-28;Android SDK Platform 28"
+  - yes | sdkmanager --licenses
   - >
     echo "$TRAVIS_COMMIT_MESSAGE"
     | grep -E  '\[(skip travis|travis skip)\]'
