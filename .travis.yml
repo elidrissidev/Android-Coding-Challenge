@@ -17,7 +17,7 @@ env:
 
 before_install:
   # Skip build if the commit message contains [skip travis] or [travis skip]
-  - echo yes | sdkmanager "build-tools;28.0.3"
+  - echo yes | sdkmanager "build-tools;28.0.3;platforms;android-28"
   - >
     echo "$TRAVIS_COMMIT_MESSAGE"
     | grep -E  '\[(skip travis|travis skip)\]'
