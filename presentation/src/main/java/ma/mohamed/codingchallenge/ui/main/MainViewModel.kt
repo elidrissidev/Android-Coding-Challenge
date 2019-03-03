@@ -37,7 +37,7 @@ class MainViewModel @Inject constructor(
     fun retry() = dataSourceFactory.dataSource.value!!.retry()
 
     private fun getLastMonthDate(): String {
-        val dateFormatter = SimpleDateFormat("YYYY-MM-DD", Locale.getDefault())
+        val dateFormatter = SimpleDateFormat("YYYY-MM-dd", Locale.getDefault())
         val calendar = GregorianCalendar().apply {
             time = Date()
             add(Calendar.DAY_OF_MONTH, -30) // minus 30 days from today
