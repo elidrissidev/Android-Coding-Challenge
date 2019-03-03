@@ -15,7 +15,8 @@ open class RepoMapper @Inject constructor(private val userMapper: UserMapper) : 
         model.description,
         model.url,
         userMapper.toEntity(model.owner),
-        model.starsCount
+        model.starsCount,
+        model.lang
     )
 
     override fun toModel(entity: RepoEntity): RepoModel = RepoModel(
@@ -24,6 +25,7 @@ open class RepoMapper @Inject constructor(private val userMapper: UserMapper) : 
         entity.description,
         entity.url,
         userMapper.toModel(entity.owner),
-        entity.starsCount
+        entity.starsCount,
+        entity.lang
     )
 }

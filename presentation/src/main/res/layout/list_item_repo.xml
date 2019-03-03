@@ -34,6 +34,17 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="@dimen/spacing_micro" />
 
+    <com.google.android.material.chip.Chip
+        android:id="@+id/language"
+        style="@style/App.Widget.Chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="?textAppearanceOverline"
+        app:layout_constraintBottom_toTopOf="@+id/owner_avatar"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        tools:text="JavaScript" />
+
     <TextView
         android:id="@+id/repo_name"
         android:layout_width="wrap_content"
@@ -48,9 +59,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_micro"
-        android:layout_marginBottom="@dimen/spacing_medium"
+        android:layout_marginBottom="16dp"
         android:textAppearance="?textAppearanceBody2"
-        app:layout_constraintBottom_toTopOf="@+id/owner_avatar"
+        app:layout_constraintBottom_toTopOf="@+id/language"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/repo_name"

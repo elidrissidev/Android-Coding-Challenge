@@ -4,4 +4,8 @@
         <item name="appbarOverlay">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item> <!-- custom attr -->
     </style>
 
+    <style name="App.Widget.Chip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipMinTouchTargetSize">32dp</item>
+    </style>
+
 </resources>

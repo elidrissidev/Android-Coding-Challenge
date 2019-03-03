@@ -15,7 +15,8 @@ object DomainTestUtils {
                 "description of repo $it",
                 "url $it",
                 UserEntity("user $it", "url", "avatar"),
-                it * Random.nextInt(100)
+                it * Random.nextInt(100),
+                "Kotlin"
             )
         }
     )
@@ -28,6 +29,7 @@ object DomainTestUtils {
         "description of repo",
         "url",
         USER_ENTITY,
-        100
+        100,
+        "Kotlin"
     )
 }

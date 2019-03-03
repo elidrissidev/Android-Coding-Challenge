@@ -6,5 +6,6 @@ data class RepoEntity(
     val description: String?,
     val url: String,
     val owner: UserEntity,
-    val starsCount: Int
+    val starsCount: Int,
+    val lang: String?
 )

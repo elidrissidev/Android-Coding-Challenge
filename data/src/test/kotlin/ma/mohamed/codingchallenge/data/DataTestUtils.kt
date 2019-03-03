@@ -15,7 +15,8 @@ object DataTestUtils {
                 "description of repo $it",
                 "url $it",
                 UserModel("user $it", "url", "avatar"),
-                it * Random.nextInt(100)
+                it * Random.nextInt(100),
+                "Kotlin"
             )
         }
     )
@@ -28,6 +29,7 @@ object DataTestUtils {
         "description of repo",
         "url",
         USER_MODEL,
-        100
+        100,
+        "Kotlin"
     )
 }

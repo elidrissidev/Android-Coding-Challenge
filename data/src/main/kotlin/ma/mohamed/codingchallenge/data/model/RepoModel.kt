@@ -8,5 +8,6 @@ data class RepoModel(
     @SerializedName("description") val description: String?,
     @SerializedName("html_url") val url: String,
     @SerializedName("owner") val owner: UserModel,
-    @SerializedName("stargazers_count") val starsCount: Int
+    @SerializedName("stargazers_count") val starsCount: Int,
+    @SerializedName("language") val lang: String?
 )
