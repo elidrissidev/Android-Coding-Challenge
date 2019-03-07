@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">Réessayez</string>
+    <string name="no_description">Pas de description</string>
+    <string name="unknown_error">Une erreur est survenue. Veuillez réessayez</string>
+    <string name="owner_avatar_content_desc">L\'avatar de %s</string>
+</resources>
