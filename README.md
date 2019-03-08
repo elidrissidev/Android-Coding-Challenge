@@ -9,7 +9,7 @@ Click [here](https://github.com/MohamedElidrissi/Android-Coding-Challenge/releas
 
 ## Run
 
-To run this project you will need Android Studio 3.3.1 or higher
+To run this project you will need Android Studio 3.3.2 or higher
 
 ## Architecture
 
