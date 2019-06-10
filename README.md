@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/MohamedElidrissi/Android-Coding-Challenge.svg?branch=master)](https://travis-ci.org/MohamedElidrissi/Android-Coding-Challenge)
-
 # Android Coding Challenge
 
 This is my take on this [coding challenge](https://github.com/hiddenfounders/mobile-coding-challenge).
